@@ -14,6 +14,7 @@ public class Invoice {
     public void addService(Service service){
         this.serviceList.add(service);
         totalPrice += service.getPrice();
+        System.out.println("Service Done");
     }
 
     public void printInvoice(){

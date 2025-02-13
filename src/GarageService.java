@@ -59,6 +59,20 @@ public class GarageService {
             else System.out.println("Invalid choice.");
         }
         invoice.printInvoice();
+        System.out.println();
+        System.out.println("If you want to Parked the car press 1 or 0 for exit : ");
+        try{
+            int ch = sc.nextInt();
+            if (ch==1) {
+                ParkingService parkingService = ParkingService.getInstance();
+                parkingService.parkedCar(customer.getCar());
+                System.out.println("Car Parked. Thank You!");
+            }else {
+                System.out.println("Exiting...");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid input");
+        }
     }
 
 }
